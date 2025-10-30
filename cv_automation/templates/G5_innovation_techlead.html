@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }} - Innovation & Tech Lead</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container {
+            background: white;
+            padding: 60px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-radius: 12px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            border-bottom: 5px double #2c3e50;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #34495e;
+            font-size: 1.5em;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .contact {
+            color: #555;
+            font-size: 0.95em;
+            font-family: 'Arial', sans-serif;
+        }
+        .contact span {
+            margin: 0 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 4px solid #3498db;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        h2::before {
+            content: "▸ ";
+            color: #3498db;
+        }
+        .keywords {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 8px solid #3498db;
+            font-weight: 600;
+            color: #2c3e50;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-family: 'Arial', sans-serif;
+        }
+        .jd-context {
+            background: #fff4e6;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 8px solid #e67e22;
+            font-size: 0.95em;
+            color: #555;
+            border-radius: 6px;
+            font-family: 'Arial', sans-serif;
+        }
+        .summary {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #34495e;
+            text-align: justify;
+        }
+        .leadership-banner {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 35px;
+            margin: 35px 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .leadership-banner h3 {
+            margin-bottom: 18px;
+            font-size: 1.5em;
+            font-weight: 600;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .leadership-banner ul {
+            margin-left: 30px;
+        }
+        .leadership-banner li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            font-family: 'Arial', sans-serif;
+        }
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 10px;
+            border-top: 6px solid #3498db;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+        .company {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .period {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+        }
+        .position {
+            color: #3498db;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-left: 25px;
+            margin-top: 12px;
+            font-family: 'Arial', sans-serif;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.7;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+        .skill-item {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .education-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+        .degree {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        .institution {
+            color: #7f8c8d;
+            margin-top: 6px;
+            font-family: 'Arial', sans-serif;
+        }
+        .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .cert-item {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #16a085;
+            font-weight: 600;
+            color: #2c3e50;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ profile.name }}</h1>
+            <div class="subtitle">Innovation Leader & Technical Executive</div>
+            <div class="contact">
+                <span>📧 {{ profile.email }}</span>
+                <span>📱 {{ profile.phone }}</span>
+                <span>🔗 {{ profile.linkedin }}</span>
+                <span>📍 {{ profile.location }}</span>
+            </div>
+        </header>
+
+        {% if keywords %}
+        <div class="keywords">
+            <strong>🎯 Strategic Focus Areas:</strong> {{ keywords }}
+        </div>
+        {% endif %}
+
+        {% if jd %}
+        <div class="jd-context">
+            <h3 style="margin-top: 0; color: #e67e22;">📋 Role Context (Auto-fetched from Notion)</h3>
+            <p>{{ jd[:500] }}{% if jd|length > 500 %}...{% endif %}</p>
+        </div>
+        {% endif %}
+
+        <section>
+            <h2>Executive Summary</h2>
+            <p class="summary">{{ profile.summary }}</p>
+        </section>
+
+        <section>
+            <div class="leadership-banner">
+                <h3>💡 Innovation & Technical Leadership Portfolio</h3>
+                <ul>
+                    {% for project in profile.projects.G5_innovation %}
+                    <li><strong>{{ project }}</strong></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            {% for job in profile.experience %}
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="company">{{ job.company }}</span>
+                    <span class="period">{{ job.period }}</span>
+                </div>
+                <div class="position">{{ job.position }}</div>
+                <ul>
+                    {% for achievement in job.achievements %}
+                    <li>{{ achievement }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Technical & Leadership Skills</h2>
+            <div class="skills-grid">
+                {% for skill in profile.skills %}
+                <div class="skill-item">{{ skill }}</div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            {% for edu in profile.education %}
+            <div class="education-item">
+                <div class="degree">{{ edu.degree }}</div>
+                <div class="institution">{{ edu.institution }} • {{ edu.year }}</div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Professional Certifications</h2>
+            <div class="certifications-list">
+                {% for cert in profile.certifications %}
+                <div class="cert-item">✓ {{ cert }}</div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

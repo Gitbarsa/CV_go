@@ -1,0 +1,98 @@
+{
+  "name": "John Doe",
+  "title": "Senior Mechanical Engineer",
+  "email": "john.doe@email.com",
+  "phone": "+1 (555) 123-4567",
+  "linkedin": "linkedin.com/in/johndoe",
+  "location": "San Francisco, CA",
+  "summary": "Results-driven mechanical engineer with 10+ years of experience in project management, product manufacturing, HVAC systems, automation, and innovation leadership. Proven track record of delivering complex projects on time and within budget.",
+  "skills": [
+    "Project Management",
+    "Mechanical Design",
+    "HVAC Systems",
+    "CAD/CAM (AutoCAD, SolidWorks)",
+    "Manufacturing Processes",
+    "Data Center Infrastructure",
+    "Commissioning & Validation",
+    "Automation & Controls",
+    "Team Leadership",
+    "Innovation Management"
+  ],
+  "experience": [
+    {
+      "company": "Tech Solutions Inc.",
+      "position": "Senior Mechanical Engineer",
+      "period": "2020 - Present",
+      "achievements": [
+        "Led mechanical design team of 8 engineers on $5M data center HVAC project",
+        "Reduced energy consumption by 30% through innovative cooling system design",
+        "Implemented automated commissioning processes, cutting project timelines by 25%"
+      ]
+    },
+    {
+      "company": "Industrial Dynamics Corp.",
+      "position": "Mechanical Engineer",
+      "period": "2016 - 2020",
+      "achievements": [
+        "Designed and deployed manufacturing automation systems for 3 production lines",
+        "Managed product development lifecycle from concept to production",
+        "Achieved 99.5% uptime on critical HVAC systems across 50K sq ft facility"
+      ]
+    },
+    {
+      "company": "StartUp Innovators",
+      "position": "Project Engineer",
+      "period": "2014 - 2016",
+      "achievements": [
+        "Spearheaded R&D initiatives for next-gen cooling technologies",
+        "Collaborated with cross-functional teams to deliver 5 patent applications",
+        "Reduced prototype development costs by 40% through process optimization"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. Mechanical Engineering",
+      "institution": "Stanford University",
+      "year": "2014"
+    },
+    {
+      "degree": "B.S. Mechanical Engineering",
+      "institution": "UC Berkeley",
+      "year": "2012"
+    }
+  ],
+  "certifications": [
+    "Professional Engineer (PE) License",
+    "Project Management Professional (PMP)",
+    "LEED Accredited Professional",
+    "Certified Energy Manager (CEM)"
+  ],
+  "projects": {
+    "G1_mechanical": [
+      "Designed structural support systems for 500-ton industrial press",
+      "Led FEA analysis for high-stress mechanical components",
+      "Managed $2M mechanical systems upgrade project"
+    ],
+    "G2_manufacturing": [
+      "Optimized injection molding processes for automotive parts",
+      "Implemented lean manufacturing principles, reducing waste by 35%",
+      "Developed quality control systems for high-volume production"
+    ],
+    "G3_hvac": [
+      "Commissioned HVAC systems for Tier III data center (10MW capacity)",
+      "Designed redundant cooling infrastructure with N+1 configuration",
+      "Conducted thermal analysis and CFD modeling for hotspot mitigation"
+    ],
+    "G4_automation": [
+      "Integrated PLC-based automation systems for assembly lines",
+      "Deployed SCADA monitoring for 24/7 facility operations",
+      "Programmed robotic systems for material handling"
+    ],
+    "G5_innovation": [
+      "Led R&D team of 12 engineers developing IoT-enabled HVAC controls",
+      "Drove technology roadmap for smart building initiatives",
+      "Mentored junior engineers and established innovation workflows"
+    ]
+  }
+}
