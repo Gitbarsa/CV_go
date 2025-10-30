@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }} - Product & Manufacturing Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            margin: -50px -50px 30px -50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        .contact {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .contact span {
+            margin-right: 20px;
+        }
+        h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+        }
+        .keywords {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+            font-weight: 600;
+        }
+        .jd-context {
+            background: #fff3e0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+            font-size: 0.95em;
+        }
+        .summary {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+        }
+        .manufacturing-focus {
+            background: #f3e5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .manufacturing-focus h3 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
+        }
+        .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e0e0;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        .company {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .period {
+            color: #888;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        .position {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            text-align: center;
+            font-weight: 500;
+        }
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .degree {
+            font-weight: 600;
+            color: #667eea;
+        }
+        .institution {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ profile.name }}</h1>
+            <div class="subtitle">Product & Manufacturing Engineer</div>
+            <div class="contact">
+                <span>📧 {{ profile.email }}</span>
+                <span>📱 {{ profile.phone }}</span>
+                <span>🔗 {{ profile.linkedin }}</span>
+                <span>📍 {{ profile.location }}</span>
+            </div>
+        </header>
+
+        {% if keywords %}
+        <div class="keywords">
+            <strong>🎯 Target Keywords:</strong> {{ keywords }}
+        </div>
+        {% endif %}
+
+        {% if jd %}
+        <div class="jd-context">
+            <h3 style="margin-top: 0; color: #ff9800;">📋 Job Description Context</h3>
+            <p>{{ jd[:500] }}{% if jd|length > 500 %}...{% endif %}</p>
+        </div>
+        {% endif %}
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary">{{ profile.summary }}</p>
+        </section>
+
+        <section>
+            <div class="manufacturing-focus">
+                <h3>🏭 Manufacturing & Product Development Excellence</h3>
+                <ul>
+                    {% for project in profile.projects.G2_manufacturing %}
+                    <li><strong>{{ project }}</strong></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            {% for job in profile.experience %}
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="company">{{ job.company }}</span>
+                    <span class="period">{{ job.period }}</span>
+                </div>
+                <div class="position">{{ job.position }}</div>
+                <ul>
+                    {% for achievement in job.achievements %}
+                    <li>{{ achievement }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                {% for skill in profile.skills %}
+                <div class="skill-item">{{ skill }}</div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            {% for edu in profile.education %}
+            <div class="education-item">
+                <div class="degree">{{ edu.degree }}</div>
+                <div class="institution">{{ edu.institution }} | {{ edu.year }}</div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                {% for cert in profile.certifications %}
+                <li>{{ cert }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

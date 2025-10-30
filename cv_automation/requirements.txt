@@ -1,0 +1,13 @@
+# CV Automation MVP Dependencies
+
+# Template engine
+jinja2>=3.1.2
+
+# Notion API integration
+notion-client>=2.2.1
+
+# Google Drive API integration
+pydrive2>=1.17.0
+
+# Additional utilities
+python-dotenv>=1.0.0
